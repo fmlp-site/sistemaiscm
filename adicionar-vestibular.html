@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Vestibular</title>
+  <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Administração</h2>
+      <nav>
+        <ul>
+          <li><a href="admin.html">Início</a></li>
+          <li><a href="adicionar-vestibular.html">Adicionar Vestibular</a></li>
+          <li><a href="gerenciar-inscricoes.html">Gerenciar Status de Inscrição</a></li>
+          <li><a href="adicionar-local-prova.html">Adicionar Local de Prova</a></li>
+          <li><a href="alocar-locais.html">Alocar Locais aos Candidatos</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="content">
+      <h1>Adicionar Vestibular</h1>
+
+      <!-- Formulário para Adicionar Vestibular -->
+      <form id="vestibularForm">
+        <label for="nome">Nome do Vestibular:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" required></textarea>
+
+        <label for="data">Data do Vestibular:</label>
+        <input type="date" id="data" name="data" required>
+
+        <button type="submit">Adicionar Vestibular</button>
+      </form>
+
+      <h2>Lista de Vestibulares</h2>
+      <ul id="vestibularList"></ul>
+    </main>
+  </div>
+
+  <script src="vestibular.js"></script>
+</body>
+</html>

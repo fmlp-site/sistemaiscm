@@ -1,0 +1,34 @@
+document.getElementById("cadastroForm").addEventListener("submit", function (event) {
+  event.preventDefault(); // Previne o envio padrão do formulário
+
+  const nome = document.getElementById("nome").value;
+  const email = document.getElementById("email").value;
+  const senha = document.getElementById("senha").value;
+
+  const dados = {
+    nome: nome,
+    email: email,
+    senha: senha
+  };
+
+  fetch("https://<seu-database-id>.restdb.io/rest/cadastros", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-apikey": "<sua-chave-de-api>",
+      "cache-control": "no-cache"
+    },
+    body: JSON.stringify(dados)
+  })
+  .then(response => {
+    if (response.ok) {
+      window.location.href = "login.html"; // Redireciona para a página de login
+    } else {
+      document.getElementById("mensagem").textContent = "Cadastro não realizado";
+    }
+  })
+  .catch(() => {
+    document.getElementById("mensagem").textContent = "Cadastro não realizado";
+  });
+});
+
